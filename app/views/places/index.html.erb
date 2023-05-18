@@ -1,20 +1,11 @@
 <H1>Places I've been</H1>
 
-List of places you have been
-
-form to enter new place
-
 <ul>
-  <% for company in @companies %>
+  <% for place in @places %>
     <li>
-      <a href="/companies/ <%= company["id"]%>"> <%= company["name"] %></a>
+      <a href="/places/ <%= place["name"]%>"> <%= place["name"] %> </a>
     </li>
   <% end %>
 </ul>
 
-<ul>
-  <li>
-      <a href="/companies/new"> new company</a>
-  </li>
-
-</ul>
+<a href="/places/new">add new place</a>
