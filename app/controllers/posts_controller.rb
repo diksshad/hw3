@@ -6,12 +6,14 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find_by({"id" => params["id"]})
+    @place = Place.find_by({"id" => params["id"]})
 end
 
   def new
     @post = Post.new
-    @place = Place.find_by({"id" => params["place_id"]})
-    @post["place_id"]= params["id"]
+    @post["place_id"]= params["place_id"] #fill in the form with this code
+    #@place = Place.find_by({"id" => params["place_id"]})
+
   end
   
    def create

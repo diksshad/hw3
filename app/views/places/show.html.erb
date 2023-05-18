@@ -12,7 +12,7 @@
 </ul>
 
 <p>
-  <a href="/posts/new?place_id= <%=@place["id"]%>"> New Post</a>
+  <a href="/posts/new?place_id=<%= @place["id"]%>"> New Post</a>
 </p>
 
 <p><%= button_to "Delete this place", @place, :method => "delete" %></p>
