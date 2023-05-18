@@ -6,4 +6,6 @@
   <li> <%= @post["description"] %> </li>
 </ul>
 
-  <p><a href="/places/<%= @place["id"] %>">Back to <%= @place["name"] %></a></p>
+<p><%= button_to "Delete this post", @post, :method => "delete" %></p>
+
+<p><a href="/places>">Back to places </a></p>

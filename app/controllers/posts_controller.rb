@@ -1,14 +1,17 @@
 class PostsController < ApplicationController
 
+  def index
+    @posts = Post.all
+  end
+
   def show
     @post = Post.find_by({"id" => params["id"]})
-    @place = Place.find_by({"id" => params["place_id"] })
 end
 
   def new
     @post = Post.new
     @place = Place.find_by({"id" => params["place_id"]})
-    @post["place_id"]= @place["id"]
+    @post["place_id"]= params["id"]
   end
   
    def create
@@ -18,7 +21,13 @@ end
     @post["posted_on"] = params["post"]["posted_on"]
     @post["place_id"] = params["post"]["place_id"]
     @post.save
-    redirect_to "/places"
+    redirect_to "/posts"
   end
+
+def destroy
+    @post = Post.find_by({ "id" => params["id"] })
+    @post.destroy
+    redirect_to "/posts"
+end
 
 end
