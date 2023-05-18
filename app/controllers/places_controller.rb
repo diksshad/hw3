@@ -2,14 +2,11 @@ class PlacesController < ApplicationController
 
 def index
   @places = Place.all
-  # find all Place rows
-  # render companies/index view
 end
 
  def show
-    @place = Place.find_by({"name" => params["name"] })
-    @posts = Post.where({"place_name" => params["name"]})
-# render companies/show view with details about Company
+    @place = Place.find_by({"id" => params["id"] })
+    @posts = Post.where({"place_id" => @place["id"]})
 end
 
 def new
